@@ -3,7 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
+Vue.use(ElementUI);
+Vue.use(VueAxios, axios)
+//设置默认请求头
+axios.defaults.baseURL='https://musicapi.citrons.cn/'
+//为POST设置默认请求头
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
